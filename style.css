@@ -55,11 +55,13 @@ body {
     background: rgba(0, 0, 0, 0.4);
     padding: 12px;
     border-radius: 12px;
-    width: 265px; /* Matches grid width + border */
+    width: 265px;
     margin: 0 auto;
     box-sizing: border-box;
+    
+    /* 🔒 ADD THIS LINE TO STOP THE SHRINKING */
+    min-height: 265px; 
 }
-
 .piece {
     width: 75px; /* Sized to fit 3-across in the tray */
     height: 75px;
