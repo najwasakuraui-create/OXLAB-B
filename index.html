@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OXLAB Puzzle Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-wrapper">
+        <header>
+            <h1>OXLAB <span class="highlight">STUDIO</span></h1>
+            <p>Complete the puzzle to win candy!</p>
+        </header>
+
+        <div class="level-controls">
+            <button onclick="startGame(3)">Level 1 (3x3)</button>
+            <button onclick="startGame(4)">Level 2 (4x4)</button>
+        </div>
+
+        <div id="puzzle-board" class="board"></div>
+
+        <div id="overlay" class="hidden">
+            <div class="modal">
+                <h2>🎉 YOU DID IT!</h2>
+                <p id="win-message">Level Complete!</p>
+                <button onclick="closeModal()">Next Level</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
