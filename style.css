@@ -97,7 +97,7 @@ body {
 }
 
 .modal {
-    background: #150ab1;
+    background: linear-gradient(to bottom, #1d3393, #936c7e); 
     padding: 30px;
     border: 3px solid #f5f0dd; /* Replace #FF00FF with your brand color */
     border-radius: 15px;
@@ -133,10 +133,6 @@ body {
     transition: 0.3s;       /* Makes it smooth when you hover/click */
 }
 
-/* Optional: This changes the color when someone hovers over it with a mouse */
-.modal p a:hover {
-    color: #00ff88;         /* Changes to green (or your chosen brand color) on hover */
-}
 
 .hidden { 
     display: none !important; 
