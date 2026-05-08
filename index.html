@@ -2,30 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OXLAB Puzzle Challenge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>OXLAB Snap Challenge</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="game-wrapper">
         <header>
-            <h1>OXLAB <span class="highlight">STUDIO</span></h1>
-            <p>Complete the puzzle to win candy!</p>
+            <h1>OXLAB <span class="highlight">SNAP</span></h1>
+            <p>Drag the pieces to the grid!</p>
         </header>
 
-        <div class="level-controls">
-            <button onclick="startGame(3)">Level 1 (3x3)</button>
-            <button onclick="startGame(4)">Level 2 (4x4)</button>
-        </div>
+        <div id="grid-container" class="grid"></div>
 
-        <div id="puzzle-board" class="board"></div>
+        <div id="pieces-tray" class="tray"></div>
 
         <div id="overlay" class="hidden">
             <div class="modal">
-                <h2>🎉 YOU DID IT!</h2>
-                <p id="win-message">Level Complete!</p>
-                <button onclick="closeModal()">Next Level</button>
+                <h2>🍭 YOU GOT IT!</h2>
+                <p>Show this to get your candy.</p>
+                <button onclick="location.reload()">Reset Game</button>
             </div>
         </div>
     </div>
