@@ -127,7 +127,7 @@ body {
 
 /* This targets the "GET TO KNOW OXLAB!" link specifically */
 .modal p a {
-    color: #d99db8;         /* Change this to any color you want (White in this case) */
+    color: #f5f0dd;         /* Change this to any color you want (White in this case) */
     text-decoration: underline; /* Keeps the underline so people know it's a link */
     font-weight: bold;      /* Makes it easier to read */
     transition: 0.3s;       /* Makes it smooth when you hover/click */
