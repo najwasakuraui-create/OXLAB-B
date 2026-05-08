@@ -5,19 +5,32 @@
 }
 
 body {
-    background-color: var(--bg-color);
+    /* linear-gradient(direction, color1, color2, color3) */
+    background: linear-gradient(to bottom, #d99db8, #1d3393, #22107a); 
+    
     color: var(--text);
     font-family: sans-serif;
+    
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stacks header, grid, and tray vertically */
+    justify-content: center; /* Centers vertically */
+    align-items: center;    /* Centers horizontally */
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text);
+    touch-action: none;
+    
     display: flex;
     justify-content: center;
-    margin: 0;
-    touch-action: none; /* Crucial for mobile dragging */
+    touch-action: none;
 }
 
+
 .game-wrapper {
-    text-align: center;
-    padding: 20px;
-    width: 320px;
+    text-align: center; /* Ensures header and paragraph text are centered */
+    width: 100%;
+    max-width: 350px;
 }
 
 .highlight { color: var(--accent); }
@@ -25,14 +38,15 @@ body {
 /* The Target Grid (where you drop pieces) */
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
     gap: 2px;
-    width: 300px;
-    height: 300px;
+    width: 304px; /* 300px for boxes + 4px for gaps */
+    height: 304px;
+    margin: 0 auto 20px auto;
     background: #222;
-    border: 2px solid #444;
-    margin-bottom: 20px;
+    border: 2px solid #444; /* Adds 4px total to width (308px) */
+    border-radius: 8px; /* Slightly rounded corners look more modern */
 }
 
 .drop-zone {
@@ -45,28 +59,39 @@ body {
 .tray {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 10px; 
     justify-content: center;
     background: #1a1a1a;
-    padding: 15px;
-    border-radius: 10px;
-    min-height: 120px;
+    padding: 14px;
+    border-radius: 8px;
+    width: 308px; /* EXACTLY matches the grid's outer width */
+    box-sizing: border-box; /* Forces padding to stay inside the 308px */
+    margin: 0 auto;
 }
 
 .piece {
-    width: 80px; /* Smaller in tray to look like icons */
-    height: 80px;
+    width: 86px; /* Scaled down slightly so 3 fit perfectly side-by-side in the tray */
+    height: 86px;
     background-size: 300px 300px;
     cursor: grab;
-    border: 1px solid var(--accent);
+    border-radius: 4px;
     touch-action: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* Adds a nice 3D pop to pieces */
+    transition: transform 0.1s; /* Smooth animation when clicked */
+}
+
+/* Make it 'pop' when someone grabs it */
+.piece:active {
+    transform: scale(1.05);
+    z-index: 1000;
 }
 
 .piece.snapped {
     width: 100px;
     height: 100px;
+    border-radius: 0;
+    box-shadow: none;
     cursor: default;
-    border: none;
 }
 
 /* Modal */
