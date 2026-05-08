@@ -6,7 +6,7 @@
 
 body {
     /* Your 3-color gradient */
-    background: linear-gradient(to bottom, #d99db8, #1d3393, #22107a); 
+    background: linear-gradient(to bottom, #1d3393, #d99db8); 
     color: var(--text);
     font-family: 'Montserrat', sans-serif;
     min-height: 100vh;
@@ -87,9 +87,9 @@ body {
 }
 
 .modal {
-    background: #111;
+    background: #150ab1;
     padding: 30px;
-    border: 2px solid var(--accent);
+    border: 3px solid #f5f0dd; /* Replace #FF00FF with your brand color */
     border-radius: 15px;
 }
 
